@@ -1,0 +1,7 @@
+.bookrain {
+  @apply w-full h-96 overflow-hidden bg-red-400;
+}
+
+.bookrain__item {
+  @apply absolute;
+}
