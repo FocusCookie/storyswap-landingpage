@@ -1,84 +1,79 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, ReactElement } from "react";
 import PropTypes from "prop-types";
 import "./Bookrain.css";
 import BookrainItem from "../BookrainItem/BookrainItem";
 
-interface RainItem {
-  id: string;
-  animation: string;
-  duration: number;
-  display: "cover" | "page";
-  style?: object;
-}
+const MIN_ANIMATION_DURATION = 3;
+const MAX_ANIMATION_DURATION = 8;
+const MIN_ANIMATION_DELAY = 1;
+const MAX_ANIMATION_DELAY = 10;
 
-const MIN_DURATION = 2000;
-const MAX_DURATION = 10000;
-const INIT_DURATION = 1000;
-const ADD_ITEM_INTERVAL = 1000;
-
-function randomIntBetweenMinMax(min: number, max: number) {
+function randomIntBetweenMinMax(min: number, max: number): number {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-function Bookrain({ ...props }) {
-  const initRainItems: RainItem[] = [
-    {
-      id: "init",
-      animation: "spin-90",
-      duration: INIT_DURATION,
-      display: "page",
-    },
+interface Props {
+  className?: string;
+}
+
+export default function Bookrain({ className }: Props): ReactElement {
+  const animationClasses: string[] = [
+    "fallDown45",
+    "fallDownMinus45",
+    "fallDown90",
+    "fallDownMinus90",
+    "fallDown90ToRight",
+    "fallDown90ToLeft",
+    "fallDown180ToLeft",
+    "fallDown180ToRight",
+    "fallDown360",
+    "fallDownMinus360",
   ];
-  const [rain, setRain] = useState(initRainItems);
 
-  useEffect(() => {
-    const rainInterval = setInterval(() => {
-      const duration = randomIntBetweenMinMax(MIN_DURATION, MAX_DURATION);
-      let id = "";
-      setRain((current) => {
-        id = `${current.length - 1 + 1} - ${Math.random()}`;
-        return [
-          ...current,
-          {
-            id: id,
-            animation: "spin-90",
-            duration: duration,
-            display: Date.now() % 6 ? "page" : "cover",
-            style: {
-              transform: `translateX(${randomIntBetweenMinMax(0, 1000)}%)`,
-            },
-          },
-        ];
-      });
+  function randomAnimationClass(): string {
+    const min: number = 0;
+    const max: number = animationClasses.length - 1;
+    return animationClasses[Math.floor(Math.random() * (max - min + 1) + min)];
+  }
 
-      setTimeout(() => {
-        setRain((current) => current.filter((item) => item.id !== id));
-      }, duration + 100); // ADD_INTERVAL will be the animation duration so after additional 500ms remove the item
-    }, ADD_ITEM_INTERVAL);
-    return () => {
-      clearInterval(rainInterval);
-    };
-  }, []);
+  function createBookRainItems(maxItems: number): any[] {
+    const items: any[] = [];
 
-  // each 200ms add a page
-  // each page will have a random animation duration time
-  // each page will have a random animation from the animations array
-  // the array of pages will look like this
+    for (let i: number = 0; i <= maxItems; i++) {
+      const type = i % 6 ? "page" : "cover";
+      const isAccentCover = type === "cover" && i % 4 === 0;
+
+      items.push(
+        <BookrainItem
+          className={`bookrain__item ${
+            isAccentCover ? "bookrain__item--accent" : ""
+          }`}
+          style={{
+            animationName: randomAnimationClass(),
+            animationDuration: `${randomIntBetweenMinMax(
+              MIN_ANIMATION_DURATION,
+              MAX_ANIMATION_DURATION
+            )}s`,
+            animationDelay: `${randomIntBetweenMinMax(
+              MIN_ANIMATION_DELAY,
+              MAX_ANIMATION_DELAY
+            )}s`,
+            left: randomIntBetweenMinMax(-10, 400),
+          }}
+          key={"item-" + i}
+          type={type}
+        />
+      );
+    }
+
+    return items;
+  }
 
   return (
-    <div className="bookrain" {...props}>
-      {rain.map((item) => (
-        <BookrainItem
-          className="bookrain__item"
-          type={item.display}
-          key={item.id}
-          style={item.style}
-        />
-      ))}
+    <div className={`bookrain ${className ? className : ""}`}>
+      {createBookRainItems(25)}
     </div>
   );
 }
 
 Bookrain.propTypes = {};
-
-export default Bookrain;

@@ -1,3 +1,87 @@
 .App {
-  @apply min-h-screen bg-medium-500 text-medium-900;
+  width: 100vw;
+  @apply min-h-screen bg-medium-500 text-medium-900 flex flex-col gap-8 overflow-hidden;
+}
+
+.highlight-title {
+  @apply font-highlight text-5xl font-bold text-dark-900;
+}
+
+header {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 22rem;
+}
+
+header * {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+
+.header__title {
+  @apply w-full h-full flex flex-col items-center justify-center z-10;
+}
+
+.welcome {
+  @apply px-4 text-base text-medium-900 text-center;
+}
+
+nav {
+  @apply flex flex-row gap-4 flex-wrap justify-center;
+}
+
+.btn {
+  @apply flex flex-row gap-2 px-4 py-2 justify-between rounded-lg items-center focus:outline-none font-highlight uppercase font-bold;
+}
+.btn:disabled {
+  @apply opacity-50 cursor-not-allowed;
+}
+.btn:disabled > * {
+  @apply cursor-not-allowed;
+}
+
+.button__text {
+  @apply w-full flex flex-row justify-center;
+}
+
+.btn--loading {
+  @apply animate-pulse cursor-wait;
+}
+.btn--loading > * {
+  @apply cursor-wait;
+}
+
+.btn--xl {
+  @apply py-2 px-4;
+}
+.btn--lg {
+  @apply py-1.5 px-3.5;
+}
+.btn--base {
+  @apply py-1.5 px-3;
+}
+.btn--sm {
+  @apply py-1 px-2.5;
+}
+.btn--xs {
+  @apply py-0.5 px-2 rounded;
+}
+.btn--full {
+  @apply h-full w-full rounded;
+}
+
+.btn--variant-primary {
+  @apply shadow bg-primary-500 hover:bg-primary-600 text-white focus:outline-none focus:ring-4 focus:ring-accent-200;
+}
+.btn--variant-accent {
+  @apply shadow bg-accent-500 hover:bg-accent-600 text-white  focus:ring-4 focus:ring-accent-200;
+}
+.btn--variant-white {
+  @apply shadow bg-white hover:bg-primary-500 text-medium-900 hover:text-white  focus:outline-none focus:ring-4 focus:ring-accent-200;
+}
+.btn--variant-secondary {
+  @apply bg-white border border-neutral-100 hover:border-neutral-700 text-medium-900 hover:text-dark-500 focus:outline-none focus:ring-4 focus:ring-accent-200;
+}
+.btn--variant-text {
+  @apply hover:bg-white border border-transparent hover:border-neutral-200 text-medium-900 focus:outline-none focus:ring-4 focus:ring-accent-200;
 }

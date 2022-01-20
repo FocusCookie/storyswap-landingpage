@@ -16,7 +16,7 @@ export default function BookrainItem({
   return (
     <>
       {type === "cover" ? (
-        <Cover className={className} style={style} />
+        <Cover className={`${className}`} style={style} />
       ) : (
         <Page className={className} style={style} />
       )}

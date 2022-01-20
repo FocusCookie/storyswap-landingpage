@@ -1,0 +1,3 @@
+.book-section {
+  @apply w-screen overflow-hidden;
+}
