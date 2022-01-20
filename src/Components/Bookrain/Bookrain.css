@@ -1,0 +1,121 @@
+.bookrain {
+  height: 22rem;
+  position: relative;
+  @apply w-full overflow-hidden;
+}
+
+.bookrain__item {
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+  transform: translateY(-100%);
+  position: absolute;
+}
+
+.bookrain__item--accent #cover {
+  @apply fill-accent-500 stroke-accent-500;
+}
+
+@keyframes fallDown45 {
+  from {
+    opacity: 100%;
+    transform: translateX(0%) rotate(0deg);
+  }
+  to {
+    opacity: 0%;
+    transform: translateX(10%) translateY(500%) rotate(45deg);
+  }
+}
+@keyframes fallDownMinus45 {
+  from {
+    opacity: 100%;
+    transform: translateX(0%) translateY(-100%) rotate(0deg);
+  }
+  to {
+    opacity: 0%;
+    transform: translateX(10%) translateY(500%) rotate(-45deg);
+  }
+}
+
+@keyframes fallDown90 {
+  from {
+    opacity: 100%;
+    transform: translateX(0%) translateY(-100%) rotate(0deg);
+  }
+  to {
+    opacity: 0%;
+    transform: translateX(10%) translateY(500%) rotate(90deg);
+  }
+}
+@keyframes fallDownMinus90 {
+  from {
+    opacity: 100%;
+    transform: translateX(0%) translateY(-100%) rotate(0deg);
+  }
+  to {
+    opacity: 0%;
+    transform: translateX(10%) translateY(500%) rotate(-90deg);
+  }
+}
+
+@keyframes fallDown90ToRight {
+  from {
+    opacity: 100%;
+    transform: translateX(0%) translateY(-100%) rotate(0deg);
+  }
+  to {
+    opacity: 0%;
+    transform: translateX(200%) translateY(500%) rotate(90deg);
+  }
+}
+@keyframes fallDown90ToLeft {
+  from {
+    opacity: 100%;
+    transform: translateX(0%) translateY(-100%) rotate(0deg);
+  }
+  to {
+    opacity: 0%;
+    transform: translateX(-200%) translateY(500%) rotate(90deg);
+  }
+}
+
+@keyframes fallDown180ToLeft {
+  from {
+    opacity: 100%;
+    transform: translateX(0%) translateY(-100%) rotate(0deg);
+  }
+  to {
+    opacity: 0%;
+    transform: translateX(-100%) translateY(500%) rotate(180deg);
+  }
+}
+@keyframes fallDown180ToRight {
+  from {
+    opacity: 100%;
+    transform: translateX(0%) translateY(-100%) rotate(0deg);
+  }
+  to {
+    opacity: 0%;
+    transform: translateX(100%) translateY(500%) rotate(180deg);
+  }
+}
+
+@keyframes fallDown360 {
+  from {
+    opacity: 100%;
+    transform: translateX(0%) translateY(-100%) rotate(0deg);
+  }
+  to {
+    opacity: 0%;
+    transform: translateX(10%) translateY(500%) rotate(360deg);
+  }
+}
+@keyframes fallDownMinus360 {
+  from {
+    opacity: 100%;
+    transform: translateX(0%) translateY(-100%) rotate(0deg);
+  }
+  to {
+    opacity: 0%;
+    transform: translateX(10%) translateY(500%) rotate(-360deg);
+  }
+}
