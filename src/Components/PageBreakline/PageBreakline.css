@@ -1,0 +1,14 @@
+.page-breakline {
+  @apply flex flex-row gap-1 items-center;
+}
+
+.page-breakline__double-line {
+  @apply h-3  w-full border-t-2 border-b-2 border-medium-900;
+}
+
+.page-breakline__shape {
+  @apply flex items-center justify-center h-5 w-10 border-2 rounded border-medium-900 rotate-45 m-1;
+}
+.page-breakline__shape__inner {
+  @apply h-2 w-2 rounded-sm bg-medium-900;
+}

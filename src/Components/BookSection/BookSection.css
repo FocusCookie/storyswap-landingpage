@@ -1,3 +1,83 @@
 .book-section {
+  display: grid;
+  align-items: start;
+  justify-items: center;
+  transition: all 1s ease-in-out;
   @apply w-screen overflow-hidden;
+}
+
+.book-section--rotate-20 {
+  rotate: -20deg;
+}
+
+.book-section * {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  align-items: start;
+}
+
+.book-section__front_wrapper {
+  @apply z-20 grid items-start justify-items-center;
+}
+.book-section__front_wrapper * {
+  grid-column: 1;
+  grid-row: 1;
+}
+.book-section__title {
+  width: 17.5rem;
+  @apply mt-10 text-3xl font-highlight font-bold text-dark-500 px-2 text-center uppercase;
+}
+
+.book-section__front--primary #front_page path {
+  @apply fill-primary-500;
+}
+.book-section__front--accent #front_page path {
+  @apply fill-accent-500;
+}
+
+.book-section__back--primary #back_cover {
+  @apply fill-primary-600;
+}
+.book-section__back--accent #back_cover {
+  @apply fill-accent-600;
+}
+
+.back_page_stroke {
+  @apply stroke-primary-600;
+}
+
+.book-section__back {
+  transform: translateY(7px) translateX(7px);
+  @apply z-0;
+}
+
+.book-section__page {
+  transform: translateX(3px);
+  transition: margin 3s ease-in-out;
+  width: 17.5rem;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
+    2px 2px 2px -1px rgba(24, 39, 75, 0.15),
+    -2px 2px 4px -2px rgba(24, 39, 75, 0.08);
+  border-radius: 2px 10px 10px 2px;
+  @apply z-10 bg-neutral-50 p-2 pt-4 mb-8;
+}
+
+.book-section__content {
+  @apply py-3;
+}
+
+.move-out-left {
+  transition: all 500ms ease-in-out;
+  transform: translateX(-92%);
+}
+.move-out-right {
+  transition: all 500ms ease-in-out;
+  transform: translateX(92%);
+}
+
+.book-section__page--bottom-out {
+  margin-top: 24rem;
+}
+.book-section__page--side-out {
+  margin-left: 148vw;
 }

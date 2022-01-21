@@ -1,0 +1,7 @@
+.page-title {
+  @apply flex flex-col gap-3 items-stretch font-highlight pt-4;
+}
+
+.page-title__headline {
+  @apply text-xl text-medium-900 text-center font-bold uppercase;
+}

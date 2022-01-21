@@ -58,7 +58,7 @@ export default function Bookrain({ className }: Props): ReactElement {
               MIN_ANIMATION_DELAY,
               MAX_ANIMATION_DELAY
             )}s`,
-            left: randomIntBetweenMinMax(-10, 400),
+            left: `${randomIntBetweenMinMax(-10, 100)}vw`,
           }}
           key={"item-" + i}
           type={type}

@@ -3,6 +3,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import Bookrain from "./Components/Bookrain/Bookrain";
 import BookSection from "./Components/BookSection/BookSection";
+import streetwaste from "./assets/street_waste.jpg";
 
 function App() {
   return (
@@ -28,7 +29,28 @@ function App() {
         <button className="btn btn--variant-primary">Get the app</button>
       </nav>
 
-      <BookSection />
+      <BookSection title="Online shopping">
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod sunt
+          est dicta quas qui, cupiditate molestiae aperiam, soluta perspiciatis
+          corrupti quo nam ea laudantium omnis in vitae corporis repudiandae
+          sed.
+        </p>
+      </BookSection>
+
+      <br />
+
+      <BookSection title="street waste" variant="accent" type="side">
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod sunt
+          est dicta quas qui, cupiditate molestiae aperiam, soluta perspiciatis
+          corrupti quo nam ea laudantium omnis in vitae corporis repudiandae
+          sed.
+        </p>
+      </BookSection>
+
+      <img src={streetwaste} alt="Book Street waste" height="200" />
+      <p>by https://unsplash.com/@markusclemens</p>
     </div>
   );
 }
