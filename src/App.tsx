@@ -49,6 +49,8 @@ function App() {
         </p>
       </BookSection>
 
+      {/* //TODO weiter machen, wenn image in book section, geht die drehung nicht mehr */}
+
       <img src={streetwaste} alt="Book Street waste" height="200" />
       <p>by https://unsplash.com/@markusclemens</p>
     </div>
