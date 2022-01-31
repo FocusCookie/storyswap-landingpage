@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import Bookrain from "./Components/Bookrain/Bookrain";
 import BookSection from "./Components/BookSection/BookSection";
@@ -14,6 +13,7 @@ function App() {
           <h1 className="highlight-title">storyswap</h1>
         </div>
       </header>
+
       <section className="welcome">
         <p>
           👋 Bibendum porttitor lectus id cursus dapibus 📖 lobortis risus.
@@ -21,7 +21,8 @@ function App() {
           orci id aliquam ultricies rhoncus aenean proin tristique.{" "}
         </p>
       </section>
-      <nav>
+
+      <nav className="py-16">
         <button className="btn btn--variant-white">paper shortage</button>
         <button className="btn btn--variant-white">street waste</button>
         <button className="btn btn--variant-white">sharing</button>
