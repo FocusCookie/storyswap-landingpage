@@ -19,6 +19,7 @@ function App() {
       </header>
 
       <section className="welcome">
+        <a href="#test">got to test</a>
         <p>
           👋 Bibendum porttitor lectus id cursus dapibus 📖 lobortis risus.
           Lacinia diam posuere et, accumsan ♥ ornare cursus morbi. Sapien in
@@ -26,15 +27,22 @@ function App() {
         </p>
       </section>
 
-      <nav className="my-28">
-        <button className="btn btn--variant-white">paper shortage</button>
-        <button className="btn btn--variant-white">street waste</button>
-        <button className="btn btn--variant-white">sharing</button>
-        <button className="btn btn--variant-white">demo</button>
-        <button className="btn btn--variant-primary">Get the app</button>
+      <nav className="my-32">
+        <a href="#paper" className="btn btn--variant-white">
+          paper shortage
+        </a>
+        <a href="#street-waste" className="btn btn--variant-white">
+          street waste
+        </a>
+        <a href="#sharing" className="btn btn--variant-white">
+          sharing
+        </a>
+        <a href="https://storyswap.app" className="btn btn--variant-primary">
+          Get the app
+        </a>
       </nav>
 
-      <BookSection title="Online shopping">
+      <BookSection title="Paper Shortage" id="paper">
         <p>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod sunt
           est dicta quas qui, cupiditate molestiae aperiam, soluta perspiciatis
@@ -45,7 +53,12 @@ function App() {
 
       <br />
 
-      <BookSection title="street waste" variant="accent" type="side">
+      <BookSection
+        title="street waste"
+        id="street-waste"
+        variant="accent"
+        type="side"
+      >
         <p>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod sunt
           est dicta quas qui, cupiditate molestiae aperiam, soluta perspiciatis
@@ -65,7 +78,7 @@ function App() {
         </div>
       </BookSection>
 
-      <BookmarkSection title="sharing">
+      <BookmarkSection title="sharing" id="sharing">
         <article>
           <PageTitle title="sharing" />
           <div className="mt-4">

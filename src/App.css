@@ -1,6 +1,6 @@
 .App {
   width: 100vw;
-  @apply min-h-screen bg-medium-500 text-medium-900 flex flex-col gap-8 overflow-hidden pb-96;
+  @apply min-h-screen bg-medium-500 text-medium-900 flex flex-col gap-8 overflow-hidden pb-96 items-center;
 }
 
 .highlight-title {

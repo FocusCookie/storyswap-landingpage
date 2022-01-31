@@ -10,15 +10,17 @@ type Props = {
   title: string;
   children?: any;
   className?: string;
+  id?: string;
 };
 
 export default function BookSection({
   children,
   className = "",
   title,
+  id = "",
 }: Props): React.ReactElement {
   return (
-    <div className={`bookmark-section ${className}`}>
+    <div className={`bookmark-section ${className}`} id={id}>
       <Book className="bookmark-section__staplebook" />
       <Book className="bookmark-section__staplebook" />
       <section className={`bookmark-section ${className}`}>

@@ -1,8 +1,9 @@
 .bookmark-section {
   display: grid;
   align-items: start;
-  justify-items: left;
-  @apply w-screen overflow-hidden;
+  justify-items: center;
+  transform: translateX(-1rem);
+  @apply w-screen;
 }
 
 .bookmark-section > * {
