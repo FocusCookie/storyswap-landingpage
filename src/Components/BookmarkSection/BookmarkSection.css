@@ -1,0 +1,89 @@
+.bookmark-section {
+  display: grid;
+  align-items: start;
+  justify-items: left;
+  @apply w-screen overflow-hidden;
+}
+
+.bookmark-section > * {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  align-items: start;
+}
+
+.bookmark-section__back {
+  transform: translate(10px, 7px);
+  @apply z-0;
+}
+.bookmark-section__back #back {
+  @apply fill-primary-500;
+}
+
+.bookmark-section__front #front_page path {
+  @apply fill-primary-400;
+}
+
+.bookmark-section__content-wrapper {
+  transform: translate(4px, 4px);
+  width: 20rem;
+  border-radius: 2px 10px 10px 2px;
+  padding: 395px 0.5rem 0.5rem 0.5rem;
+  transform: translateX(1rem);
+  @apply z-10 mb-8 flex flex-row items-stretch;
+}
+
+.bookmark-section__content__bookmark {
+  @apply flex flex-col items-stretch;
+}
+
+.bookmark-section__content__bookmark__stripe {
+  @apply bg-primary-500 h-full;
+}
+
+.bookmark-section__content__bookmark__end {
+  background-image: url("../../assets/Bookmark.svg");
+  width: 46px;
+  height: 47px;
+  @apply bg-no-repeat bg-left-bottom;
+}
+
+.bookmark-section__content {
+  width: 17.5rem;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
+    2px 2px 2px -1px rgba(24, 39, 75, 0.15),
+    -2px 2px 4px -2px rgba(24, 39, 75, 0.08);
+  border-radius: 2px 10px 10px 2px;
+  @apply bg-neutral-50 p-2 pt-4 my-12 mt-24;
+}
+
+.bookmark-section__front-wrapper {
+  @apply z-20 grid items-start justify-items-center;
+}
+.bookmark-section__front-wrapper * {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.bookmark-section__title {
+  width: 17.5rem;
+  @apply mt-10 text-3xl font-highlight font-bold text-dark-500 px-2 text-center uppercase;
+}
+
+.bookmark-section__staplebook:nth-of-type(1) {
+  transform: translate(3rem, 3rem);
+}
+.bookmark-section__staplebook:nth-of-type(2) {
+  transform: translate(1.5rem, 1.5rem);
+}
+.bookmark-section__staplebook:nth-of-type(1) #Front path {
+  @apply fill-primary-500;
+}
+.bookmark-section__staplebook:nth-of-type(1) #Back {
+  @apply fill-primary-600;
+}
+.bookmark-section__staplebook:nth-of-type(2) #Front path {
+  @apply fill-accent-500;
+}
+.bookmark-section__staplebook:nth-of-type(2) #Back {
+  @apply fill-accent-600;
+}

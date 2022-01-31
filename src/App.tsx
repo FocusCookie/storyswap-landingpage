@@ -2,7 +2,11 @@ import React from "react";
 import "./App.css";
 import Bookrain from "./Components/Bookrain/Bookrain";
 import BookSection from "./Components/BookSection/BookSection";
+import BookmarkSection from "./Components/BookmarkSection/BookmarkSection";
+import PageTitle from "./Components/PageTitle/PageTitle";
 import streetwaste from "./assets/street_waste.jpg";
+
+//TODO: Implement navigation jump to each section
 
 function App() {
   return (
@@ -22,7 +26,7 @@ function App() {
         </p>
       </section>
 
-      <nav className="py-16">
+      <nav className="my-28">
         <button className="btn btn--variant-white">paper shortage</button>
         <button className="btn btn--variant-white">street waste</button>
         <button className="btn btn--variant-white">sharing</button>
@@ -48,12 +52,32 @@ function App() {
           corrupti quo nam ea laudantium omnis in vitae corporis repudiandae
           sed.
         </p>
+        <div className="w-full mt-4">
+          <img
+            src={streetwaste}
+            className="rounded"
+            alt="Book Street waste"
+            height="200"
+          />
+          <p className="text-xs text-medium-700 text-center">
+            by https://unsplash.com/@markusclemens
+          </p>
+        </div>
       </BookSection>
 
-      {/* //TODO weiter machen, wenn image in book section, geht die drehung nicht mehr */}
-
-      <img src={streetwaste} alt="Book Street waste" height="200" />
-      <p>by https://unsplash.com/@markusclemens</p>
+      <BookmarkSection title="sharing">
+        <article>
+          <PageTitle title="sharing" />
+          <div className="mt-4">
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore
+              eveniet eaque aliquam delectus sint saepe vel aut perspiciatis.
+              Non nesciunt quam aliquam libero ducimus ratione dicta mollitia
+              unde laudantium nulla.
+            </p>
+          </div>
+        </article>
+      </BookmarkSection>
     </div>
   );
 }

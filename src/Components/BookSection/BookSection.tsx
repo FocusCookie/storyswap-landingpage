@@ -1,4 +1,4 @@
-import React, { ReactElement, useState, useEffect, useRef } from "react";
+import React, { ReactElement, useEffect } from "react";
 import "./BookSection.css";
 import { ReactComponent as Front } from "../../assets/book_section/front_first_page.svg";
 import { ReactComponent as Back } from "../../assets/book_section/back.svg";
@@ -9,21 +9,23 @@ interface Props {
   variant?: "primary" | "accent";
   type?: "bottom" | "side";
   className?: string;
-  style?: object;
+  id?: string;
   children?: any;
+  infiniteAnimation?: boolean;
 }
 
 export default function BookSection({
   title,
   variant = "primary",
   type = "bottom",
-  className,
-  style,
+  className = "",
+  id = "",
   children,
+  infiniteAnimation = false,
 }: Props): ReactElement {
-  const containerRef = useRef(null);
-  const [bookIsVisible, setBookIsVisible] = useState(false);
-  const [intersectionRatio, setIntersectionRatio] = useState(0);
+  const containerRef = React.useRef<HTMLHtmlElement>(null!);
+  const [bookIsVisible, setBookIsVisible] = React.useState<Boolean>(false);
+  const [intersectionRatio, setIntersectionRatio] = React.useState<Number>(0);
 
   const callbackFunction = (entries: any) => {
     const [entry] = entries;
@@ -35,7 +37,7 @@ export default function BookSection({
     const options = {
       root: null,
       rootMargin: "0px",
-      threshold: [0, 0.2, 0.7],
+      threshold: [0, 0.25, 0.5, 0.75, 1],
     };
     const observer = new IntersectionObserver(callbackFunction, options);
 
@@ -55,16 +57,17 @@ export default function BookSection({
     if (intersectionRatio >= 0.5 && !bookIsVisible) {
       setBookIsVisible(true);
     }
-    if (intersectionRatio <= 0.1 && bookIsVisible) {
+    if (intersectionRatio <= 0.1 && bookIsVisible && infiniteAnimation) {
       setBookIsVisible(false);
     }
   }, [intersectionRatio]);
 
   return (
     <section
+      id={id}
       className={`book-section ${
         type === "side" && !bookIsVisible ? "book-section--rotate-20" : ""
-      }`}
+      } ${className}`}
       ref={containerRef}
     >
       <Back
