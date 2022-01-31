@@ -1,7 +1,7 @@
 .bookrain {
   height: 22rem;
   position: relative;
-  @apply w-full overflow-hidden;
+  @apply w-screen overflow-hidden;
 }
 
 .bookrain__item {
