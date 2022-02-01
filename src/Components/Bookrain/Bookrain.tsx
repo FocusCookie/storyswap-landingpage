@@ -1,12 +1,11 @@
-import React, { useEffect, ReactElement } from "react";
-import PropTypes from "prop-types";
+import React, { ReactElement } from "react";
 import "./Bookrain.css";
 import BookrainItem from "../BookrainItem/BookrainItem";
 
-const MIN_ANIMATION_DURATION = 3;
-const MAX_ANIMATION_DURATION = 8;
-const MIN_ANIMATION_DELAY = 1;
-const MAX_ANIMATION_DELAY = 10;
+const MIN_ANIMATION_DURATION: number = 3;
+const MAX_ANIMATION_DURATION: number = 8;
+const MIN_ANIMATION_DELAY: number = 1;
+const MAX_ANIMATION_DELAY: number = 10;
 
 function randomIntBetweenMinMax(min: number, max: number): number {
   return Math.floor(Math.random() * (max - min + 1) + min);
@@ -58,7 +57,7 @@ export default function Bookrain({ className }: Props): ReactElement {
               MIN_ANIMATION_DELAY,
               MAX_ANIMATION_DELAY
             )}s`,
-            left: `${randomIntBetweenMinMax(-10, 100)}vw`,
+            left: `${randomIntBetweenMinMax(0, 100)}vw`,
           }}
           key={"item-" + i}
           type={type}

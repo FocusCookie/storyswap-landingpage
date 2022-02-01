@@ -63,7 +63,7 @@
 }
 
 .book-section__content {
-  @apply py-3;
+  @apply flex flex-col gap-4 py-3 items-stretch;
 }
 
 .move-out-left {

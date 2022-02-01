@@ -4,7 +4,6 @@ import "./BookmarkSection.css";
 import { ReactComponent as Book } from "../../assets/book_section/book.svg";
 import { ReactComponent as Front } from "../../assets/book_section/front_first_page.svg";
 import { ReactComponent as Back } from "../../assets/book_section/back.svg";
-import PageTitle from "../PageTitle/PageTitle";
 
 type Props = {
   title: string;

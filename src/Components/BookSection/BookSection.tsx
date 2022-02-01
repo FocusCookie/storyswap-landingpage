@@ -2,7 +2,6 @@ import React, { ReactElement, useEffect } from "react";
 import "./BookSection.css";
 import { ReactComponent as Front } from "../../assets/book_section/front_first_page.svg";
 import { ReactComponent as Back } from "../../assets/book_section/back.svg";
-import PageTitle from "../PageTitle/PageTitle";
 
 interface Props {
   title: string;
@@ -85,7 +84,6 @@ export default function BookSection({
             : ""
         } ${bookIsVisible && type === "side" ? "move-to-right" : ""}`}
       >
-        <PageTitle title={title} />
         <div className="book-section__content">{children}</div>
       </div>
 

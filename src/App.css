@@ -22,12 +22,24 @@ header * {
   @apply w-full h-full flex flex-col items-center justify-center z-10;
 }
 
+.person {
+  @apply my-4 mr-auto ml-auto;
+}
+
 .welcome {
-  @apply px-4 text-base text-medium-900 text-center;
+  @apply px-4 text-base text-medium-900 text-center max-w-screen-sm;
 }
 
 nav {
-  @apply flex flex-row gap-4 flex-wrap justify-center;
+  @apply flex flex-row gap-4 flex-wrap justify-center my-32 max-w-screen-sm;
+}
+
+.sections {
+  @apply max-w-screen-sm flex flex-col items-center gap-12;
+}
+
+#about {
+  @apply max-w-screen-sm text-center flex flex-col gap-4;
 }
 
 .btn {
