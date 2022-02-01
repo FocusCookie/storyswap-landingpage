@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.47613513.css",
+    "main.js": "/static/js/main.e849cba1.js",
+    "static/js/787.ba3f4004.chunk.js": "/static/js/787.ba3f4004.chunk.js",
+    "static/media/street_waste.jpg": "/static/media/street_waste.0cf8dcbbf92abb720500.jpg",
+    "static/media/packages.jpg": "/static/media/packages.c0042f8eb1da9c00cc98.jpg",
+    "static/media/Person.svg": "/static/media/Person.ae643a0dcb3c81658813a058e6ceb902.svg",
+    "static/media/book.svg": "/static/media/book.d10b8a04f52b7a7a7e2d978335951979.svg",
+    "static/media/back.svg": "/static/media/back.c27a54273ec3e2ab084c3afda41abecb.svg",
+    "static/media/front_first_page.svg": "/static/media/front_first_page.efe7a3cdfe8f907c409c3f91b0d69242.svg",
+    "static/media/book_page.svg": "/static/media/book_page.832a88cfc7890dc1390e363bf896b278.svg",
+    "static/media/book_cover.svg": "/static/media/book_cover.3d99b0ec0b04f59d77fa6529361a935d.svg",
+    "index.html": "/index.html",
+    "static/media/Bookmark.svg": "/static/media/Bookmark.ea65c11dbef594dd67b7.svg",
+    "main.47613513.css.map": "/static/css/main.47613513.css.map",
+    "main.e849cba1.js.map": "/static/js/main.e849cba1.js.map",
+    "787.ba3f4004.chunk.js.map": "/static/js/787.ba3f4004.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.47613513.css",
+    "static/js/main.e849cba1.js"
+  ]
+}
