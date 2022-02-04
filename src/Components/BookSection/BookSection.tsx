@@ -53,7 +53,7 @@ export default function BookSection({
   }, [containerRef]);
 
   useEffect(() => {
-    if (intersectionRatio >= 0.5 && !bookIsVisible) {
+    if (intersectionRatio >= 0.3 && !bookIsVisible) {
       setBookIsVisible(true);
     }
     if (intersectionRatio <= 0.1 && bookIsVisible && infiniteAnimation) {
