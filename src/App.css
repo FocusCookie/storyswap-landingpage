@@ -39,7 +39,7 @@ nav {
 }
 
 #about {
-  @apply max-w-screen-sm text-center flex flex-col gap-4;
+  @apply max-w-screen-sm text-center flex flex-col gap-4 p-4;
 }
 
 .btn {
